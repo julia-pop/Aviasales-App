@@ -1,0 +1,51 @@
+.loading {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .loaderWrapper  {
+    display: flex;
+    justify-content: center;
+     margin-bottom: 15px;
+  }
+  
+  .noResults {
+    font-size: 14px;
+  }
+  
+  .ticketsLoaded {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .ticketsLoadedText {
+    margin-left: 5px;
+  }
+  
+  .ticketsLoaded span {
+    margin-left: 5px;
+  }
+  
+  @media (max-width: 768px) {
+    .loading {
+      font-size: 12px;
+    }
+  
+    .noResults {
+      font-size: 12px;
+      margin: 12px;
+    }
+  
+    .ticketsLoadedText {
+      font-size: 12px;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .noResults {
+      font-size: 10px;
+    }
+  }
