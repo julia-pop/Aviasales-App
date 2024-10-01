@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { setFilterTickets } from '../../store/actions/getTickets';
-import styles from './TicketFilter.module.scss';
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setFilterTickets } from "../../store/actions/getTickets";
+import styles from "./TicketFilter.module.scss";
 
 export default function TicketFilter() {
   const dispatch = useDispatch();
-  const selectedFilter = useSelector(state => state.tickets.filterTickets);
+  const selectedFilter = useSelector((state) => state.tickets.filterTickets);
 
   const filterMap = {
-    'Самый дешевый': 'cheapest',
-    'Самый быстрый': 'fastest',
-    'Оптимальный': 'optimal',
+    "Самый дешевый": "cheapest",
+    "Самый быстрый": "fastest",
+    Оптимальный: "optimal",
   };
 
-  const defaultFilter = 'optimal';
+  const defaultFilter = "optimal";
 
   useEffect(() => {
     if (!selectedFilter) {
@@ -24,11 +24,12 @@ export default function TicketFilter() {
   const handleFilterClick = (filterName) => {
     const filterKey = filterMap[filterName];
     dispatch(setFilterTickets(filterKey));
-  }
+  };
 
-  const getButtonClassName = (filterName) => (
-    `${styles.filterButton} ${selectedFilter === filterMap[filterName] ? styles.selected : ''}`
-  );
+  const getButtonClassName = (filterName) =>
+    `${styles.filterButton} ${
+      selectedFilter === filterMap[filterName] ? styles.selected : ""
+    }`;
 
   return (
     <nav className={styles.ticketFilter}>
@@ -36,7 +37,7 @@ export default function TicketFilter() {
         {Object.keys(filterMap).map((filterName) => (
           <li key={filterName} className={styles.ticketFilterItem}>
             <button
-              type='button'
+              type="button"
               className={getButtonClassName(filterName)}
               onClick={() => handleFilterClick(filterName)}
             >
