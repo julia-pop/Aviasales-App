@@ -1,2 +1,2 @@
-aviasales-app-azy7.vercel.app
+https://aviasales-app-azy7.vercel.app
 
