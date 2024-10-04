@@ -48,7 +48,7 @@ export const getTickets = () => async (dispatch) => {
       allTickets = [...allTickets, ...tickets];
       dispatch(setTickets(allTickets));
 
-      if (stop) {
+      if (!stop) {
         dispatch(finishLoadingAllTickets());
       } else {
         await fetchTickets(searchId);
