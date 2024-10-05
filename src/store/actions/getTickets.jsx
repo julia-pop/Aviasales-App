@@ -50,11 +50,10 @@ export const getTickets = () => async (dispatch) => {
 
       if (!stop) {
         dispatch(finishLoadingAllTickets());
-      } else {
-        await fetchTickets(searchId);
-      }
+      } 
+      
     } catch (error) {
-      await fetchTickets(searchId);
+      console.error('Произошла ошибка при загрузке билетов:', error);
     }
   };
 
